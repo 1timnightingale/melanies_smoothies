@@ -44,3 +44,7 @@ values ('""" + ingredients_string + """','""" + name_on_order +"""')"""
         session.sql(my_insert_stmt).collect()
         st.success('You Smoothie is ordered, '+ name_on_order + '!', icon="✅")
     
+# New section to display smoothiefroot nutrition information
+import requests
+smoothiefroot_reponse = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_reponse)
