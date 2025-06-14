@@ -48,3 +48,5 @@ values ('""" + ingredients_string + """','""" + name_on_order +"""')"""
 import requests
 smoothiefroot_reponse = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
 st.text(smoothiefroot_reponse.json())
+sf_df = st.dataframe(data=smoothiefroot_reponse.json(), use_container_width=True)
+
